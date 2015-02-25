@@ -10,9 +10,26 @@
 
 @interface KHOCoursesViewController ()
 
+@property (nonatomic, strong) NSURLSession *session;
+
 @end
 
 @implementation KHOCoursesViewController
+
+- (instancetype)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        self.navigationItem.title = @"BNR Courses";
+        
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        _session = [NSURLSession sessionWithConfiguration:config
+                                                 delegate:nil
+                                            delegateQueue:nil];
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
