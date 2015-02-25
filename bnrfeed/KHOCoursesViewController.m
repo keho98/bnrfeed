@@ -41,6 +41,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)fetchFeed
+{
+    NSString *requestString = @"http://bookapi.bignerdranch.com/courses.json";
+    NSURL *url = [NSURL URLWithString:requestString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    NSURLSessionTask *dataTask = [self.session dataTaskWithRequest:request
+                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSString *json = [[NSString alloc] initWithData:data
+                                               encoding:NSUTF8StringEncoding];
+                                                     
+                                                 }];
+    
+    [dataTask resume];
+}
+
+#pragma mark - UITableViewDelegate methods
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 0;
