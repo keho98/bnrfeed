@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  KHOCoursesViewController.h
 //  bnrfeed
 //
 //  Created by Kevin Ho on 2/24/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface KHOCoursesViewController : UITableViewController
 
 @end
-

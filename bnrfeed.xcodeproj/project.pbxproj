@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		D2EC7FD31A9DB5AE00280D0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EC7FD21A9DB5AE00280D0D /* main.m */; };
 		D2EC7FD61A9DB5AE00280D0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EC7FD51A9DB5AE00280D0D /* AppDelegate.m */; };
-		D2EC7FD91A9DB5AE00280D0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EC7FD81A9DB5AE00280D0D /* ViewController.m */; };
 		D2EC7FDC1A9DB5AE00280D0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EC7FDA1A9DB5AE00280D0D /* Main.storyboard */; };
 		D2EC7FDE1A9DB5AE00280D0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2EC7FDD1A9DB5AE00280D0D /* Images.xcassets */; };
 		D2EC7FE11A9DB5AE00280D0D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2EC7FDF1A9DB5AE00280D0D /* LaunchScreen.xib */; };
 		D2EC7FED1A9DB5AE00280D0D /* bnrfeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EC7FEC1A9DB5AE00280D0D /* bnrfeedTests.m */; };
+		D2EC7FF81A9DB5E300280D0D /* KHOCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EC7FF71A9DB5E300280D0D /* KHOCoursesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +32,14 @@
 		D2EC7FD21A9DB5AE00280D0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D2EC7FD41A9DB5AE00280D0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2EC7FD51A9DB5AE00280D0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D2EC7FD71A9DB5AE00280D0D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D2EC7FD81A9DB5AE00280D0D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D2EC7FDB1A9DB5AE00280D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2EC7FDD1A9DB5AE00280D0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D2EC7FE01A9DB5AE00280D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D2EC7FE61A9DB5AE00280D0D /* bnrfeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bnrfeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EC7FEB1A9DB5AE00280D0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2EC7FEC1A9DB5AE00280D0D /* bnrfeedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bnrfeedTests.m; sourceTree = "<group>"; };
+		D2EC7FF61A9DB5E300280D0D /* KHOCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHOCoursesViewController.h; sourceTree = "<group>"; };
+		D2EC7FF71A9DB5E300280D0D /* KHOCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHOCoursesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +81,10 @@
 		D2EC7FCF1A9DB5AE00280D0D /* bnrfeed */ = {
 			isa = PBXGroup;
 			children = (
+				D2EC7FF61A9DB5E300280D0D /* KHOCoursesViewController.h */,
+				D2EC7FF71A9DB5E300280D0D /* KHOCoursesViewController.m */,
 				D2EC7FD41A9DB5AE00280D0D /* AppDelegate.h */,
 				D2EC7FD51A9DB5AE00280D0D /* AppDelegate.m */,
-				D2EC7FD71A9DB5AE00280D0D /* ViewController.h */,
-				D2EC7FD81A9DB5AE00280D0D /* ViewController.m */,
 				D2EC7FDA1A9DB5AE00280D0D /* Main.storyboard */,
 				D2EC7FDD1A9DB5AE00280D0D /* Images.xcassets */,
 				D2EC7FDF1A9DB5AE00280D0D /* LaunchScreen.xib */,
@@ -219,8 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2EC7FD91A9DB5AE00280D0D /* ViewController.m in Sources */,
 				D2EC7FD61A9DB5AE00280D0D /* AppDelegate.m in Sources */,
+				D2EC7FF81A9DB5E300280D0D /* KHOCoursesViewController.m in Sources */,
 				D2EC7FD31A9DB5AE00280D0D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
