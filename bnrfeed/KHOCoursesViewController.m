@@ -11,6 +11,7 @@
 @interface KHOCoursesViewController ()
 
 @property (nonatomic, strong) NSURLSession *session;
+@property (nonatomic, copy) NSArray *courses;
 
 @end
 
@@ -26,6 +27,7 @@
         _session = [NSURLSession sessionWithConfiguration:config
                                                  delegate:nil
                                             delegateQueue:nil];
+        [self fetchFeed];
     }
     
     return self;
@@ -49,9 +51,11 @@
     
     NSURLSessionTask *dataTask = [self.session dataTaskWithRequest:request
                                                  completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSString *json = [[NSString alloc] initWithData:data
-                                               encoding:NSUTF8StringEncoding];
+                                                     NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
+                                                                    options:0 error:nil];
+                                                     self.courses = jsonObject[@"courses"];
                                                      
+                                                     NSLog(@"Json %@", self.courses);
                                                  }];
     
     [dataTask resume];
