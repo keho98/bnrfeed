@@ -21,14 +21,26 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     KHOCoursesViewController *cvc = [[KHOCoursesViewController alloc] initWithStyle:UITableViewStylePlain];
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:cvc];
+    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:cvc];
     
     KHOCourseViewController *courseViewController = [[KHOCourseViewController alloc] init];
     cvc.courseViewController = courseViewController;
     
-    self.window.rootViewController = nc;
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        UINavigationController *detailNav = [[UINavigationController alloc] initWithRootViewController:courseViewController];
+        
+        UISplitViewController *splitViewController = [[UISplitViewController alloc] init];
+        
+        splitViewController.delegate = courseViewController;
+        
+        splitViewController.viewControllers = @[masterNav, detailNav];
+        
+        self.window.rootViewController = splitViewController;
+    } else {
+        self.window.rootViewController = masterNav;
+    }
+
     self.window.backgroundColor = [UIColor whiteColor];
-    
     [self.window makeKeyAndVisible];
     return YES;
 }

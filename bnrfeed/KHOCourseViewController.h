@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KHOCourseViewController : UIViewController
+@interface KHOCourseViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (nonatomic, strong) NSURL *URL;
 

@@ -106,8 +106,10 @@
     self.courseViewController.title = course[@"title"];
     self.courseViewController.URL = URL;
     
-    [self.navigationController pushViewController:self.courseViewController
-                                         animated:YES];
+    if (!self.splitViewController) {
+        [self.navigationController pushViewController:self.courseViewController
+                                             animated:YES];
+    }
 }
 
 @end
