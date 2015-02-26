@@ -8,7 +8,7 @@
 
 #import "KHOCoursesViewController.h"
 
-@interface KHOCoursesViewController ()
+@interface KHOCoursesViewController () <NSURLSessionDataDelegate>
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, copy) NSArray *courses;
@@ -25,7 +25,7 @@
         
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         _session = [NSURLSession sessionWithConfiguration:config
-                                                 delegate:nil
+                                                 delegate:self
                                             delegateQueue:nil];
         [self fetchFeed];
     }
@@ -47,7 +47,7 @@
 
 - (void)fetchFeed
 {
-    NSString *requestString = @"http://bookapi.bignerdranch.com/courses.json";
+    NSString *requestString = @"https://bookapi.bignerdranch.com/private/courses.json";
     NSURL *url = [NSURL URLWithString:requestString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -63,6 +63,14 @@
                                                  }];
     
     [dataTask resume];
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler
+{
+    NSURLCredential *cred = [NSURLCredential credentialWithUser:@"BigNerdRanch"
+                                                       password:@"AchieveNerdvana"
+                                                    persistence:NSURLCredentialPersistenceForSession];
+    completionHandler(NSURLSessionAuthChallengeUseCredential, cred);
 }
 
 #pragma mark - UITableViewDataSource protocol methods
