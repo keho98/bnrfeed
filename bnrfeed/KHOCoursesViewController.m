@@ -35,7 +35,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self.tableView registerClass:[UITableViewCell class]
+           forCellReuseIdentifier:@"UITableViewCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +57,9 @@
                                                                     options:0 error:nil];
                                                      self.courses = jsonObject[@"courses"];
                                                      
-                                                     NSLog(@"Json %@", self.courses);
+                                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                                         [self.tableView reloadData];
+                                                     });
                                                  }];
     
     [dataTask resume];
@@ -65,12 +69,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.courses count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
+                                                                 forIndexPath:indexPath];
+    cell.textLabel.text = @"Hello";
+    
+    return cell;
 }
 
 @end
