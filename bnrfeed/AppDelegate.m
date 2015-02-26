@@ -23,6 +23,9 @@
     KHOCoursesViewController *cvc = [[KHOCoursesViewController alloc] initWithStyle:UITableViewStylePlain];
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:cvc];
     
+    KHOCourseViewController *courseViewController = [[KHOCourseViewController alloc] init];
+    cvc.courseViewController = courseViewController;
+    
     self.window.rootViewController = nc;
     self.window.backgroundColor = [UIColor whiteColor];
     

@@ -55,7 +55,13 @@
                                                  completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                      NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
                                                                     options:0 error:nil];
+                                                     
                                                      self.courses = jsonObject[@"courses"];
+                                                     
+                                                     NSLog(@"%@", self.courses);
+                                                     if (error) {
+                                                         NSLog(@"%@", error.description);
+                                                     }
                                                      
                                                      dispatch_async(dispatch_get_main_queue(), ^{
                                                          [self.tableView reloadData];
@@ -67,6 +73,7 @@
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler
 {
+    NSLog(@"Check Credentials");
     NSURLCredential *cred = [NSURLCredential credentialWithUser:@"BigNerdRanch"
                                                        password:@"AchieveNerdvana"
                                                     persistence:NSURLCredentialPersistenceForSession];

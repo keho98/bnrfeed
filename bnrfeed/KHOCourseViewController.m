@@ -19,6 +19,24 @@
     UIWebView *webView = [[UIWebView alloc] init];
     webView.scalesPageToFit = YES;
     self.view = webView;
+    
+    UIToolbar *toolbar = [[UIToolbar alloc] init];
+    toolbar.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:toolbar];
+    
+    NSArray *horizontalContstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[toolbar]|"
+                                                                              options:0
+                                                                              metrics:nil
+                                                                                views:@{@"toolbar":toolbar}];
+    
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[toolbar(==44)]|"
+                                                                          options:0
+                                                                          metrics:nil
+                                                                            views:@{@"toolbar":toolbar}];
+    
+    [self.view addConstraints:horizontalContstraints];
+    [self.view addConstraints:verticalConstraints];
+    
 }
 
 - (void)viewDidLoad {
