@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2AE38A71A9EB7B60033CDA4 /* KHOCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AE38A61A9EB7B60033CDA4 /* KHOCourseViewController.m */; };
 		D2EC7FD31A9DB5AE00280D0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EC7FD21A9DB5AE00280D0D /* main.m */; };
 		D2EC7FD61A9DB5AE00280D0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EC7FD51A9DB5AE00280D0D /* AppDelegate.m */; };
 		D2EC7FDC1A9DB5AE00280D0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EC7FDA1A9DB5AE00280D0D /* Main.storyboard */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D2AE38A51A9EB7B60033CDA4 /* KHOCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHOCourseViewController.h; sourceTree = "<group>"; };
+		D2AE38A61A9EB7B60033CDA4 /* KHOCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHOCourseViewController.m; sourceTree = "<group>"; };
 		D2EC7FCD1A9DB5AE00280D0D /* bnrfeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bnrfeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EC7FD11A9DB5AE00280D0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2EC7FD21A9DB5AE00280D0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 			children = (
 				D2EC7FF61A9DB5E300280D0D /* KHOCoursesViewController.h */,
 				D2EC7FF71A9DB5E300280D0D /* KHOCoursesViewController.m */,
+				D2AE38A51A9EB7B60033CDA4 /* KHOCourseViewController.h */,
+				D2AE38A61A9EB7B60033CDA4 /* KHOCourseViewController.m */,
 				D2EC7FD41A9DB5AE00280D0D /* AppDelegate.h */,
 				D2EC7FD51A9DB5AE00280D0D /* AppDelegate.m */,
 				D2EC7FDA1A9DB5AE00280D0D /* Main.storyboard */,
@@ -221,6 +226,7 @@
 			files = (
 				D2EC7FD61A9DB5AE00280D0D /* AppDelegate.m in Sources */,
 				D2EC7FF81A9DB5E300280D0D /* KHOCoursesViewController.m in Sources */,
+				D2AE38A71A9EB7B60033CDA4 /* KHOCourseViewController.m in Sources */,
 				D2EC7FD31A9DB5AE00280D0D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +420,7 @@
 				D2EC7FF21A9DB5AE00280D0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2EC7FF31A9DB5AE00280D0D /* Build configuration list for PBXNativeTarget "bnrfeedTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +429,7 @@
 				D2EC7FF51A9DB5AE00280D0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

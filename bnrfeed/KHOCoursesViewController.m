@@ -76,7 +76,8 @@
 {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
                                                                  forIndexPath:indexPath];
-    cell.textLabel.text = @"Hello";
+    NSDictionary *course = self.courses[indexPath.row];
+    cell.textLabel.text = course[@"title"];
     
     return cell;
 }
