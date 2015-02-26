@@ -65,7 +65,7 @@
     [dataTask resume];
 }
 
-#pragma mark - UITableViewDelegate methods
+#pragma mark - UITableViewDataSource protocol methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -80,6 +80,19 @@
     cell.textLabel.text = course[@"title"];
     
     return cell;
+}
+
+#pragma mark - UITableViewDelegate protocol methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *course = self.courses[indexPath.row];
+    NSURL *URL = [NSURL URLWithString:course[@"url"]];
+    self.courseViewController.title = course[@"title"];
+    self.courseViewController.URL = URL;
+    
+    [self.navigationController pushViewController:self.courseViewController
+                                         animated:YES];
 }
 
 @end

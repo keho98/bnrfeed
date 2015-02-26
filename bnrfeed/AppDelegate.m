@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "KHOCoursesViewController.h"
+#import "KHOCourseViewController.h"
 
 @interface AppDelegate ()
 

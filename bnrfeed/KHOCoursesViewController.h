@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KHOCourseViewController.h"
 
 @interface KHOCoursesViewController : UITableViewController
+
+@property (nonatomic,strong) KHOCourseViewController *courseViewController;
 
 @end
