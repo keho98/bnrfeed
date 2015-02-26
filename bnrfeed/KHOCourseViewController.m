@@ -22,6 +22,11 @@
     
     UIToolbar *toolbar = [[UIToolbar alloc] init];
     toolbar.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self.view action:@selector(goBack)];
+    UIBarButtonItem *fwdButton = [[UIBarButtonItem alloc] initWithTitle:@"Forward" style:UIBarButtonItemStylePlain target:self.view action:@selector(goForward)];
+    [toolbar setItems:@[backButton, fwdButton]];
+    
     [self.view addSubview:toolbar];
     
     NSArray *horizontalContstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[toolbar]|"
